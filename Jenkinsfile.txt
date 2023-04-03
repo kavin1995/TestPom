@@ -5,7 +5,7 @@ pipeline {
 stage(‘start’) {
 	steps {
 		
-bat 'mvn clean verify'
+      bat 'mvn clean verify'
 	}
 }
 	stage (Test) {
@@ -15,6 +15,7 @@ bat 'mvn clean verify'
 }
 	}
 	stage (‘build’) {
+	steps{
 	cucumber buildStatus: 'null', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', jsonReportDirectory: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\TestPOM\\target', pendingStepsNumber: -1, reportTitle: 'feature-overview', skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', trendsLimit: 5, undefinedStepsNumber: -1
 
 	}
